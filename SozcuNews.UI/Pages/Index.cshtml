@@ -1,0 +1,14 @@
+﻿@page
+@model SozcuNews.UI.Pages.IndexModel
+
+<form method="get">
+    <input type="text" name="Query" placeholder="Haber ara..." value="@Model.Query" />
+    <button type="submit">Ara</button>
+</form>
+
+<ul>
+    @foreach (var news in Model.NewsList)
+    {
+        <li><a href="@news.Url" target="_blank">@news.Title</a></li>
+    }
+</ul>
